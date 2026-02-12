@@ -1,0 +1,20 @@
+body {   
+    margin: 0;  
+    height: 100vh;  
+    display: flex;    
+    justify-content: center;  
+    align-items: center;      
+    background: #111;       
+    font-family: Arial, sans-serif; } 
+
+
+#mylabel {    
+font-size: 4rem;  
+color: #00ffcc;        
+ background: #000; 
+ padding: 20px 40px;  
+ border-radius: 12px;   
+ box-shadow: 0 0 10px #00ffcc,    
+  0 0 20px #00ffcc,     
+ inset 0 0 10px #00ffcc;   
+ letter-spacing: 3px; } 
