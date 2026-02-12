@@ -1,50 +1,21 @@
-// Get reference to the label element in HTML
-// This is where the time will be displayed
-const mylabel = document.getElementById("mylabel");
 
-
-// Call update once immediately
-// (so user doesn't wait 1 second to see time)
-update();
-
-
-// Run update() every 1000ms (1 second)
-setInterval(update, 1000);
-
-
-// This function gets current time and displays it
-function update() {
-
-    // Create Date object with current time
-    let date = new Date();
-
-    // Convert time to formatted string
-    // and put it inside the label
-    mylabel.innerHTML = formatTime(date);
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1e1e2f, #2b5876);
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-
-// Converts Date object into readable clock format
-function formatTime(date) {
-
-    // Extract hours, minutes, seconds
-    let hours = date.getHours();     // 0–23
-    let minutes = date.getMinutes(); // 0–59
-    let seconds = date.getSeconds(); // 0–59
-
-    // Determine AM or PM
-    let ampm = hours >= 12 ? 'PM' : 'AM';
-
-    // Convert 24-hour → 12-hour format
-    hours = hours % 12;
-
-    // If result is 0 (midnight/noon), show 12
-    hours = hours ? hours : 12;
-
-    // Add leading zero if < 10
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    // Return formatted string
-    return `${hours}:${minutes}:${seconds} ${ampm}`;
+#mylabel {
+    font-size: 80px;
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 20px;
+    letter-spacing: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
 }
